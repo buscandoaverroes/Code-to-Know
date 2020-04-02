@@ -1,8 +1,32 @@
 	
-
+* HIIII
 *===============================================================================================
 *2019 data 
 	use "$data\3. Clean\Philippines_CSS_data_CLEAN_30 Dec.dta", clear 
+	
+		local keepvars = "m_dwh_s1_q1h m_dwh_s1_q1l m_dwh_s1_q1l_10 m_dwh_s2_q1_2 m_dwh_s2_q1_3 m_dwh_s2_q1_4 m_perm_a_s1_q2 m_perm_a_s1_q3 m_perm_a_s1_q5 m_perm_a_s2_q9c m_perm_a_s2_q9d m_perm_b_s1_q1 m_perm_b_s1_q2 m_perm_b_s1_q3       m_perm_b_s1_q4 m_perm_b_s1_q5_1 m_perm_b_s1_q7_3 m_perm_b_s1_q8a m_perm_b_s1_q8b m_perm_b_s1_q8c m_perm_b_s1_q8d        
+		m_perm_b_s1_q8e m_perm_b_s1_q9_1 m_perm_b_s1_q9_2 m_perm_b_s1_q9_3 m_perm_b_s1_q9_4 m_perm_b_s2_q4                      
+		m_perm_b_s2_q5 m_perm_b_s2_q6 m_perm_b_s2_q7_1 m_perm_b_s2_q7_2 m_perm_b_s2_q7_3 m_perm_b_s2_q8_1 m_perm_b_s2_q8_2       
+		m_perm_b_s2_q8_3 m_perm_b_s2_q8_4 m_perm_b_s2_q10a m_perm_b_s2_q10b m_perm_b_s2_q10c m_perm_b_s2_q10e m_perm_b_s2_q10f  
+		m_perm_b_s2_q10g m_perm_b_s3_q2_1 m_perm_b_s4_q1 m_perm_b_s4_q2 m_perm_b_s4_q7 m_ras_s1_q1_1           
+		m_ras_s1_q1_2 m_ras_s1_q2_1 m_ras_s1_q3_3 m_ras_s1_q3_6 m_ras_s1_q3_8 /*direct elicitation*/ m_mot_s1_q1 m_mot_s1_q3    
+		/* Current position and intended arc of career */ m_mot_s3_q1 m_mot_s3_q2_1 m_mot_s3_q7 m_mot_s3_q11 m_mot_s3_q12_1     
+		m_mot_s3_q12_3 m_mot_s3_q12_5 m_mot_s3_q12_6 m_mot_s3_q12_7 /*environment, social norms and the narrative*/ m_mot_s4_q2 
+		m_mot_s4_q3 m_mot_s4_q4 m_mot_s4_q6 m_mot_s4_q7 m_mot_s4_q8 /* innovative environment */ m_mot_s5_q1a m_mot_s5_q1b      
+		m_mot_s5_q1c m_mot_s5_q1d m_mot_s5_q1e /*General bottlenecks*/ m_tub_s3_q1_2 m_tub_s3_q1_3 m_tub_s3_q1_4 m_tub_s3_q1_5  
+		m_tub_s3_q1_6 m_tub_s3_q1_7 m_tub_s3_q1_8 m_tub_s3_q1_10 m_tub_s3_q1_11 m_tub_s3_q1_13 m_tub_s3_q2 m_tub_s3_q3a m_tub_s3_q3e           
+		m_tub_s3_q3f m_tub_s3_q3g m_tub_s3_q3h m_tub_s3_q3i /* Skills */ m_ska_s1_q1a m_ska_s1_q1b m_ska_s1_q1c m_ska_s1_q1d    
+		m_ska_s1_q2 /*Capacity building */ m_ska_s2_q4_1 m_ska_s2_q0 m_ska_s2_q5a m_ska_s2_q5b m_ska_s2_q5c m_ska_s2_q5d        
+		m_ska_s2_q5g m_ska_s2_q8 m_ska_s2_q12b m_ska_s2_q13a m_ska_s2_q13b /*source of information*/ m_inf_s1_q2b /*info        
+		& communication bottlenecks */ m_inf_s2_q1c m_inf_s2_q1d m_inf_s2_q1e /*Political interference*/ m_int_s2_q7            
+		/*PBB*/ m_ref_s2_1_q1a m_ref_s2_1_q1b m_ref_s2_1_q1c m_ref_s2_1_q1d m_ref_s2_2_q1b m_ref_s2_2_q1e m_ref_s2_2_q1g         
+		m_ref_s2_2_q1h /* Perceptions and experiences  */ m_eth_s1_q1_3 m_eth_s1_q3 m_eth_s2_q1a m_eth_s2_q1b m_eth_s2_q1c      
+		m_piq_qii"
+		
+		levelsof `keepvars', clean // this does the list without puncutations
+		local correct_n_vars = r(r)
+		
+	
 	
 *1. select all key questions. This serves as the raw data for cell reference in the dashboard
 		*1.1 demographics 
@@ -169,32 +193,40 @@
 		*keep m_eth_s1_q1_3 m_eth_s1_q3 m_eth_s2_q1a m_eth_s2_q1b m_eth_s2_q1c
 		
 		*keep questions used for the dashboard
-		keep m_dwh_s1_q1h m_dwh_s1_q1l m_dwh_s1_q1l_10 m_dwh_s2_q1_2 m_dwh_s2_q1_3 m_dwh_s2_q1_4 m_perm_a_s1_q2 m_perm_a_s1_q3 m_perm_a_s1_q5   ///
-		 /*transparency and accountability*/ m_perm_a_s2_q9c m_perm_a_s2_q9d m_perm_b_s1_q1 m_perm_b_s1_q2 m_perm_b_s1_q3       ///
-		m_perm_b_s1_q4 m_perm_b_s1_q5_1 m_perm_b_s1_q7_3 m_perm_b_s1_q8a m_perm_b_s1_q8b m_perm_b_s1_q8c m_perm_b_s1_q8d        ///
-		m_perm_b_s1_q8e m_perm_b_s1_q9_1 m_perm_b_s1_q9_2 m_perm_b_s1_q9_3 m_perm_b_s1_q9_4 m_perm_b_s2_q4                      ///
-		m_perm_b_s2_q5 m_perm_b_s2_q6 m_perm_b_s2_q7_1 m_perm_b_s2_q7_2 m_perm_b_s2_q7_3 m_perm_b_s2_q8_1 m_perm_b_s2_q8_2      /// 
-		m_perm_b_s2_q8_3 m_perm_b_s2_q8_4 m_perm_b_s2_q10a m_perm_b_s2_q10b m_perm_b_s2_q10c m_perm_b_s2_q10e m_perm_b_s2_q10f  ///
-		m_perm_b_s2_q10g m_perm_b_s3_q2_1 m_perm_b_s4_q1 m_perm_b_s4_q2 m_perm_b_s4_q7 m_ras_s1_q1_1           ///
-		m_ras_s1_q1_2 m_ras_s1_q2_1 m_ras_s1_q3_3 m_ras_s1_q3_6 m_ras_s1_q3_8 /*direct elicitation*/ m_mot_s1_q1 m_mot_s1_q3    ///
-		/* Current position and intended arc of career */ m_mot_s3_q1 m_mot_s3_q2_1 m_mot_s3_q7 m_mot_s3_q11 m_mot_s3_q12_1     ///
-		m_mot_s3_q12_3 m_mot_s3_q12_5 m_mot_s3_q12_6 m_mot_s3_q12_7 /*environment, social norms and the narrative*/ m_mot_s4_q2 ///
-		m_mot_s4_q3 m_mot_s4_q4 m_mot_s4_q6 m_mot_s4_q7 m_mot_s4_q8 /* innovative environment */ m_mot_s5_q1a m_mot_s5_q1b      ///
-		m_mot_s5_q1c m_mot_s5_q1d m_mot_s5_q1e /*General bottlenecks*/ m_tub_s3_q1_2 m_tub_s3_q1_3 m_tub_s3_q1_4 m_tub_s3_q1_5  ///
-		m_tub_s3_q1_6 m_tub_s3_q1_7 m_tub_s3_q1_8 m_tub_s3_q1_10 m_tub_s3_q1_11 m_tub_s3_q1_13 m_tub_s3_q2 m_tub_s3_q3a m_tub_s3_q3e           ///
-		m_tub_s3_q3f m_tub_s3_q3g m_tub_s3_q3h m_tub_s3_q3i /* Skills */ m_ska_s1_q1a m_ska_s1_q1b m_ska_s1_q1c m_ska_s1_q1d    ///
-		m_ska_s1_q2 /*Capacity building */ m_ska_s2_q4_1 m_ska_s2_q0 m_ska_s2_q5a m_ska_s2_q5b m_ska_s2_q5c m_ska_s2_q5d        ///
-		m_ska_s2_q5g m_ska_s2_q8 m_ska_s2_q12b m_ska_s2_q13a m_ska_s2_q13b /*source of information*/ m_inf_s1_q2b /*info        ///
-		& communication bottlenecks */ m_inf_s2_q1c m_inf_s2_q1d m_inf_s2_q1e /*Political interference*/ m_int_s2_q7            ///
-		/*PBB*/ m_ref_s2_1_q1a m_ref_s2_1_q1b m_ref_s2_1_q1c m_ref_s2_1_q1d m_ref_s2_2_q1b m_ref_s2_2_q1e m_ref_s2_2_q1g        /// 
-		m_ref_s2_2_q1h /* Perceptions and experiences  */ m_eth_s1_q1_3 m_eth_s1_q3 m_eth_s2_q1a m_eth_s2_q1b m_eth_s2_q1c      ///
-		m_piq_qii
+		keep `keepvars'
+		
+		ds
+		local allvars = r(varlist)
+		
+		levelsof `allvars', clean // this gives you a variable list wihtout puncutations.
+		return list
+		local dis_vars_n = r(r)
+		assert `dis_vars_n' == `correct_n_vars' 			// this checks that the number of distinct variables == the number of variablaes we know should be in the dataset.
+		
 		
 		save "$data\6. Constructed_Data\PH_CSS_125Questions_DashBoard_Mar5.dta", replace 
 		
 				
 				
+		// list of locals
+		local thing1 = 	18	// number i know that thing should be
+		local thing2 = 687 	// that i know thing 2 should be.
 		
+		
+		
+				
+				
+		//  /*transparency and accountability*/
+		
+			levelsof `trans_acc'
+			return list
+			local n_trans_acc = r(N)  // == 74 
+			
+			
+			
+			assert `n_trans_acc' == `thing1' 	// because i know that there should be 74 elements in this list
+			
+			
 
 
 		
