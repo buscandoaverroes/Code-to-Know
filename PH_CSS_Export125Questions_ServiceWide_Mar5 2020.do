@@ -4,6 +4,8 @@
 use "$data\6. Constructed_Data\PH_CSS_125Questions_DashBoard_Mar5.dta", clear 
 
 
+	local varlist = ""
+
 * collapse to get averages and number of respondents for the whole sample	
 	 
 		*gen number of respondents for the whole sample
